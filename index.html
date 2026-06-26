@@ -8,79 +8,182 @@
   <meta property="og:title" content="GasMeUp" />
   <meta property="og:description" content="The cheapest worthwhile fill-up, one tap away." />
   <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-head">
-    <a class="brand" href="/">Gas<span class="dot">Me</span>Up</a>
+    <a class="brand" href="/"><img src="logo.png" alt="GasMeUp logo" /><span class="wm">GasMe<span class="up">Up</span></span></a>
     <nav>
       <a href="#how">How it works</a>
-      <a href="#support">Support</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
-      <div class="wrap">
-        <h1>The cheapest <span class="accent">worthwhile</span> fill-up, one tap away.</h1>
-        <p class="lede">GasMeUp does the math on local gas prices — so you stop hunting through a map of pins and just get the answer.</p>
-        <div class="badges">
-          <span class="badge">Coming to the App Store</span>
-          <span class="badge ghost">Coming to Google Play</span>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="pill"><span class="blip"></span> Launching soon on iPhone &amp; Android</span>
+          <h1>The cheapest <span class="accent">worthwhile</span> fill-up, one tap away.</h1>
+          <p class="lede">GasMeUp does the math on local gas prices — so you stop scrolling a map of pins and just get the answer: the station that's actually worth driving to.</p>
+          <div class="cta-row">
+            <span class="badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.55 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.92-.03-.01-2.7-1.04-2.73-4.11zM14.53 4.81c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
+              App Store
+            </span>
+            <span class="badge ghost">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.2v17c0 .5.2.9.5 1.2l9-9.7-9-9.7zM14.4 12.7l2.8-2.9-9.8-5.6c-.3-.2-.6-.2-.9-.1l7.9 8.6zM6.5 21.9c.3.1.6 0 .9-.1l9.8-5.6-2.8-2.9-7.9 8.6zM18.9 10.9l-1.6.9 2.8 2.9 1.6-.9c.8-.5.8-1.6 0-2.1l-2.8 1.6z"/></svg>
+              Google Play
+            </span>
+          </div>
+          <p class="cta-note">No deal-hunting. No daily check-ins. Set it once.</p>
         </div>
-        <p class="coming">Launching soon on iPhone and Android.</p>
+
+        <div class="phone-wrap">
+          <div class="phone" role="img" aria-label="GasMeUp app preview showing the best-value station near you">
+            <div class="screen">
+              <div class="s-head">Best value near you</div>
+              <div class="s-title">Stations around you</div>
+              <div class="best-card">
+                <div class="crown">
+                  <svg viewBox="0 0 24 24" fill="#fff"><path d="M3 7l4.5 3L12 4l4.5 6L21 7l-1.6 11H4.6L3 7z"/></svg>
+                </div>
+                <div class="label">Best pick</div>
+                <div class="name">Shell · Main St</div>
+                <div class="price">$4.21<span> /gal</span></div>
+                <div class="save-chip">Worth the stop</div>
+              </div>
+              <div class="s-row"><div><div class="sr-name">Chevron</div><div class="sr-dist">0.8 mi</div></div><div class="sr-price">$4.39</div></div>
+              <div class="s-row"><div><div class="sr-name">Arco</div><div class="sr-dist">1.4 mi</div></div><div class="sr-price">$4.18</div></div>
+              <div class="s-row"><div><div class="sr-name">76</div><div class="sr-dist">2.1 mi</div></div><div class="sr-price">$4.49</div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- HOW IT WORKS -->
     <section id="how">
       <div class="wrap">
-        <h2>How it works</h2>
-        <p class="sub">Set it once. Tap when you need gas. Get the best-value station near you.</p>
-        <div class="steps">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>Three taps from "ugh, gas" to done.</h2>
+          <p>Set it once. Tap when you need to fill up. Get the smartest stop near you.</p>
+        </div>
+        <div class="grid3">
           <div class="card">
-            <span class="n">1</span>
+            <span class="step-n">STEP 1</span>
             <h3>Set your area</h3>
             <p>Tell GasMeUp where you drive. No account, no sign-up wall — just your area.</p>
           </div>
           <div class="card">
-            <span class="n">2</span>
-            <h3>One tap to scan</h3>
-            <p>Tap once and GasMeUp checks live prices at the stations around you.</p>
+            <span class="step-n">STEP 2</span>
+            <h3>Tap to scan</h3>
+            <p>One tap checks live prices at the stations around you, right now.</p>
           </div>
           <div class="card">
-            <span class="n">3</span>
-            <h3>Get the best value</h3>
-            <p>We crown the smartest stop — factoring in how far you'd actually drive to get there, not just the lowest sticker price.</p>
+            <span class="step-n">STEP 3</span>
+            <h3>Fill up smarter</h3>
+            <p>We crown the best-value station — counting the drive, not just the sticker price.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="band">
+    <!-- FEATURES -->
+    <section id="features" class="band">
       <div class="wrap">
-        <h2>Built for real drivers</h2>
-        <p class="sub">Less time deal-hunting. More signal, no noise.</p>
-        <div class="features">
+        <div class="section-head">
+          <p class="eyebrow">Why GasMeUp</p>
+          <h2>Built for real drivers, not deal-hunters.</h2>
+          <p>Less time comparing pins on a map. More signal, no noise.</p>
+        </div>
+        <div class="grid3">
           <div class="card">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 3L12 4l4.5 6L21 7l-1.6 11H4.6L3 7z"/></svg>
+            </div>
             <h3>Best value, not just cheapest</h3>
             <p>A station three miles out of your way isn't a deal. GasMeUp prices in the drive and shows the fill-up that actually wins.</p>
           </div>
           <div class="card">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            </div>
             <h3>Home-screen widget</h3>
-            <p>Your best nearby option, right on your home screen. Tap it to scan again.</p>
+            <p>Your best nearby option, right on your home screen. Tap it to scan again — no app to open.</p>
           </div>
           <div class="card">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18M18 3v18"/><path d="M6 8h12M6 14h12"/></svg>
+            </div>
             <h3>Highway Mode</h3>
-            <p>On a road trip? GasMeUp scans the stations along the road ahead, so you fill up at the right exit instead of the next one.</p>
+            <p>On a road trip? GasMeUp scans the stations along the road ahead, so you fill up at the right exit — not the next one.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="support" class="support">
+    <!-- FAQ -->
+    <section id="faq">
       <div class="wrap">
-        <h2>Support</h2>
-        <p class="sub">Questions, feedback, or trouble with the app? We read every message.</p>
+        <div class="section-head">
+          <p class="eyebrow">Questions</p>
+          <h2>Good to know</h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>How is the "best pick" chosen?</summary>
+            <p>GasMeUp doesn't just rank by lowest price. It factors in how far you'd actually drive, so a slightly pricier station that's close can beat a cheaper one across town. You always see the full list too — the crown is just our math on which stop is worth it.</p>
+          </details>
+          <details>
+            <summary>Do I need an account?</summary>
+            <p>No. There's no sign-up wall and no email required to use the app. You set your area and start scanning.</p>
+          </details>
+          <details>
+            <summary>Where do the prices come from?</summary>
+            <p>From live, third-party fuel-price data for stations near you. Prices can change quickly, so always confirm at the pump — GasMeUp points you to the best-value option, it doesn't guarantee a specific price.</p>
+          </details>
+          <details>
+            <summary>What's Highway Mode?</summary>
+            <p>On a long drive, GasMeUp can scan the stations along the road ahead instead of just around your current spot — so you can choose the right exit to fill up at before you're running low.</p>
+          </details>
+          <details>
+            <summary>When does it launch?</summary>
+            <p>Soon, on both iPhone and Android. Check back here, or reach out below and we'll let you know.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-final">
+      <div class="wrap">
+        <div class="card-cta">
+          <h2>Stop overpaying for gas you'd have bought anyway.</h2>
+          <p>GasMeUp is launching soon. One tap, the best-value fill-up near you.</p>
+          <div class="cta-row">
+            <span class="badge">App Store — soon</span>
+            <span class="badge ghost">Google Play — soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section id="support" class="support band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Support</p>
+          <h2>We read every message.</h2>
+          <p>Questions, feedback, or trouble with the app? Reach out anytime.</p>
+        </div>
         <p><a class="mail" href="mailto:support@gasmeup.app">support@gasmeup.app</a></p>
       </div>
     </section>
@@ -88,9 +191,12 @@
 
   <footer>
     <div class="wrap">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="mailto:support@gasmeup.app">Contact</a>
+      <a class="brand" href="/"><img src="logo.png" alt="" width="28" height="28" /><span class="wm">GasMe<span class="up">Up</span></span></a>
+      <div class="flinks">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:support@gasmeup.app">Contact</a>
+      </div>
       <div class="copy">&copy; 2026 GasMeUp. All rights reserved.</div>
     </div>
   </footer>
