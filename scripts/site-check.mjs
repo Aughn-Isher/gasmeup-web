@@ -22,6 +22,13 @@ export function auditHtml(file, html, { files } = {}) {
       break;
     }
   }
+  const MARKETING_PAGES = ['index.html', 'press.html'];
+  if (MARKETING_PAGES.includes(file)) {
+    const dashes = (html.match(/—/g) ?? []).length;
+    if (dashes > 2) {
+      violations.push({ file, rule: 'em-dash-budget', detail: `${dashes} em-dashes (max 2) — AI-register guard` });
+    }
+  }
   if (/home.screen widget/i.test(html)) {
     violations.push({ file, rule: 'feature-truth', detail: 'widget marketing (cut from v1, ADR-0022)' });
   }

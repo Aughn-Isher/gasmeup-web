@@ -62,6 +62,17 @@ test('internal links and asset references must resolve to real files', () => {
   assert.deepEqual(ruleHits(ok, 'broken-link'), []);
 });
 
+test('marketing pages hold the em-dash budget (max 2)', () => {
+  const dashy = auditHtml('index.html', '<p>One — two — three — four dashes is AI register.</p>');
+  assert.equal(ruleHits(dashy, 'em-dash-budget').length, 1);
+
+  const fine = auditHtml('index.html', '<p>One quiet dash — that is all.</p>');
+  assert.deepEqual(ruleHits(fine, 'em-dash-budget'), []);
+
+  const legal = auditHtml('terms.html', '<p>Legal — pages — may — dash — freely.</p>');
+  assert.deepEqual(ruleHits(legal, 'em-dash-budget'), []);
+});
+
 test('every shipped page passes the audit', () => {
   const violations = auditSite(new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'));
   assert.deepEqual(violations, []);
