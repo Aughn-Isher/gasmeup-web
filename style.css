@@ -137,6 +137,9 @@ img { max-width: 100%; display: block; }
 }
 .badge svg { width: 20px; height: 20px; }
 .badge.ghost { background: #fff; color: var(--navy); border: 1px solid var(--line); box-shadow: none; }
+.store-badge { display: inline-flex; align-items: center; }
+.store-badge img { height: 54px; display: block; }
+.store-badge.play img { height: 80px; margin: -13px 0; }
 .cta-note { margin-top: 16px; font-size: 14px; color: var(--ink-faint); }
 
 /* ---------- Phone mockup ---------- */
