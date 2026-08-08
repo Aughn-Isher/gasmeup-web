@@ -73,6 +73,25 @@ test('marketing pages hold the em-dash budget (max 2)', () => {
   assert.deepEqual(ruleHits(legal, 'em-dash-budget'), []);
 });
 
+test('index carries the crawler/share head set: og:image, smart banner, canonical, JSON-LD', () => {
+  const bare = auditHtml('index.html', '<head><title>x</title></head>');
+  for (const missing of ['og:image', 'apple-itunes-app', 'canonical', 'json-ld']) {
+    assert.equal(ruleHits(bare, 'required-meta').some((v) => v.detail.includes(missing)), true, `should flag ${missing}`);
+  }
+
+  const full = auditHtml('index.html',
+    '<head><meta property="og:image" content="https://gasmeup.app/og.png" />' +
+    '<meta name="apple-itunes-app" content="app-id=6777846453" />' +
+    '<link rel="canonical" href="https://gasmeup.app/" />' +
+    '<script type="application/ld+json">{"@type":"SoftwareApplication","name":"GasMeUp","offers":[{"price":"1.99"}]}</script></head>');
+  assert.deepEqual(ruleHits(full, 'required-meta'), []);
+
+  const badJson = auditHtml('index.html',
+    '<head><meta property="og:image" content="x" /><meta name="apple-itunes-app" content="y" />' +
+    '<link rel="canonical" href="z" /><script type="application/ld+json">{broken</script></head>');
+  assert.equal(ruleHits(badJson, 'required-meta').some((v) => v.detail.includes('json-ld')), true);
+});
+
 test('every shipped page passes the audit', () => {
   const violations = auditSite(new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'));
   assert.deepEqual(violations, []);

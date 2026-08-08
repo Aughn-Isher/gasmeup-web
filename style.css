@@ -142,66 +142,12 @@ img { max-width: 100%; display: block; }
 .store-badge.play img { height: 80px; margin: -13px 0; }
 .cta-note { margin-top: 16px; font-size: 14px; color: var(--ink-faint); }
 
-/* ---------- Phone mockup ---------- */
+/* ---------- Hero screenshot + listing strip ---------- */
 .phone-wrap { display: flex; justify-content: center; }
-.phone {
-  position: relative;
-  width: 280px;
-  background: #0e1830;
-  border-radius: 42px;
-  padding: 12px;
-  box-shadow: var(--shadow);
-}
-.phone::before {
-  content: "";
-  position: absolute;
-  top: 14px; left: 50%; transform: translateX(-50%);
-  width: 110px; height: 22px;
-  background: #0e1830;
-  border-radius: 0 0 14px 14px;
-  z-index: 3;
-}
-.screen {
-  background: linear-gradient(180deg, #f3f7f9, #ffffff);
-  border-radius: 32px;
-  overflow: hidden;
-  padding: 34px 16px 20px;
-}
-.screen .s-head { font-size: 12px; color: var(--ink-faint); font-weight: 600; margin-bottom: 4px; }
-.screen .s-title { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 14px; letter-spacing: -0.02em; }
-.best-card {
-  background: var(--navy);
-  color: #fff;
-  border-radius: 18px;
-  padding: 16px;
-  margin-bottom: 14px;
-  position: relative;
-}
-.best-card .crown {
-  position: absolute; top: 14px; right: 14px;
-  width: 26px; height: 26px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--green); border-radius: 999px;
-}
-.best-card .crown svg { width: 15px; height: 15px; }
-.best-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #aab9d8; font-weight: 700; }
-.best-card .name { font-size: 16px; font-weight: 700; margin: 3px 0 8px; }
-.best-card .price { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; }
-.best-card .price span { font-size: 14px; font-weight: 600; color: #aab9d8; }
-.save-chip {
-  display: inline-block; margin-top: 10px;
-  background: rgba(78,141,91,0.22); color: #c8eccf;
-  font-size: 12px; font-weight: 700;
-  padding: 5px 11px; border-radius: 999px;
-}
-.s-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 11px 12px; border-radius: 12px; background: #fff;
-  border: 1px solid var(--line); margin-bottom: 8px;
-}
-.s-row .sr-name { font-size: 13px; font-weight: 600; color: var(--navy); }
-.s-row .sr-dist { font-size: 11px; color: var(--ink-faint); }
-.s-row .sr-price { font-size: 15px; font-weight: 700; color: var(--ink-soft); }
+.hero-shot { width: 100%; max-width: 340px; height: auto; border-radius: 24px; box-shadow: var(--shadow); }
+.shots { display: grid; gap: 20px; grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+@media (min-width: 760px) { .shots { grid-template-columns: repeat(3, 1fr); max-width: none; margin: 0; } }
+.shots img { width: 100%; height: auto; border-radius: 18px; box-shadow: var(--shadow-sm); }
 
 /* ---------- Sections ---------- */
 section { padding: 72px 0; }
@@ -272,6 +218,11 @@ section h2 { font-size: clamp(26px, 4vw, 36px); letter-spacing: -0.025em; margin
 .cta-final p { color: #c2cde6; max-width: 460px; margin: 0 auto 26px; }
 .cta-final .cta-row { justify-content: center; }
 .cta-final .badge.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.3); }
+
+/* ---------- Pricing ---------- */
+#pricing { padding-top: 0; }
+.price-line { text-align: center; font-size: 19px; color: var(--ink); margin: 0; }
+.price-line strong { color: var(--green-dark); }
 
 /* ---------- Support ---------- */
 .support { text-align: center; }

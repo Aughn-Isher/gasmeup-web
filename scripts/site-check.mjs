@@ -39,6 +39,26 @@ export function auditHtml(file, html, { files } = {}) {
   }
   auditPlayLinks(file, html, violations);
   if (file === 'index.html') {
+    if (!/property="og:image"/.test(html)) {
+      violations.push({ file, rule: 'required-meta', detail: 'og:image missing' });
+    }
+    if (!/name="apple-itunes-app"/.test(html)) {
+      violations.push({ file, rule: 'required-meta', detail: 'apple-itunes-app smart-banner meta missing' });
+    }
+    if (!/rel="canonical"/.test(html)) {
+      violations.push({ file, rule: 'required-meta', detail: 'canonical link missing' });
+    }
+    const ld = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+    if (!ld) {
+      violations.push({ file, rule: 'required-meta', detail: 'json-ld missing' });
+    } else {
+      try {
+        const parsed = JSON.parse(ld[1]);
+        if (parsed['@type'] !== 'SoftwareApplication' || !parsed.name || !parsed.offers) throw new Error('shape');
+      } catch {
+        violations.push({ file, rule: 'required-meta', detail: 'json-ld unparseable or missing name/offers' });
+      }
+    }
     if (!/href="[^"]*apps\.apple\.com\/us\/app\/gasmeup-find-cheap-gas\/id6777846453[^"]*"/.test(html)) {
       violations.push({ file, rule: 'store-link-missing', detail: 'no apple App Store link' });
     }

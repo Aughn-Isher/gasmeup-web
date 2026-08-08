@@ -8,7 +8,28 @@
   <meta property="og:title" content="GasMeUp" />
   <meta property="og:description" content="The cheapest worthwhile fill-up, one tap away." />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" href="logo.png" />
+  <meta property="og:url" content="https://gasmeup.app/" />
+  <meta property="og:image" content="https://gasmeup.app/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="apple-itunes-app" content="app-id=6777846453" />
+  <link rel="canonical" href="https://gasmeup.app/" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "GasMeUp",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "TravelApplication",
+    "description": "GasMeUp scans live gas prices around you and ranks every station by what the fill-up really costs, including the drive to get there.",
+    "url": "https://gasmeup.app/",
+    "offers": [
+      { "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "description": "Monthly subscription" },
+      { "@type": "Offer", "price": "17.99", "priceCurrency": "USD", "description": "Annual subscription with a 7-day free trial" }
+    ]
+  }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -40,24 +61,7 @@
         </div>
 
         <div class="phone-wrap">
-          <div class="phone" role="img" aria-label="GasMeUp app preview showing the best-value station near you">
-            <div class="screen">
-              <div class="s-head">Best value near you</div>
-              <div class="s-title">Stations around you</div>
-              <div class="best-card">
-                <div class="crown">
-                  <svg viewBox="0 0 24 24" fill="#fff"><path d="M3 7l4.5 3L12 4l4.5 6L21 7l-1.6 11H4.6L3 7z"/></svg>
-                </div>
-                <div class="label">Best pick</div>
-                <div class="name">Shell · Main St</div>
-                <div class="price">$4.21<span> /gal</span></div>
-                <div class="save-chip">Worth the stop</div>
-              </div>
-              <div class="s-row"><div><div class="sr-name">Chevron</div><div class="sr-dist">0.8 mi</div></div><div class="sr-price">$4.39</div></div>
-              <div class="s-row"><div><div class="sr-name">Arco</div><div class="sr-dist">1.4 mi</div></div><div class="sr-price">$4.18</div></div>
-              <div class="s-row"><div><div class="sr-name">76</div><div class="sr-dist">2.1 mi</div></div><div class="sr-price">$4.49</div></div>
-            </div>
-          </div>
+          <img class="hero-shot" src="shot-2.png" width="600" height="1300" alt="GasMeUp home screen: a scan found 17 stations, with the Best Pick saving $8.15 per fill-up" />
         </div>
       </div>
     </section>
@@ -124,6 +128,21 @@
       </div>
     </section>
 
+    <!-- SCREENSHOTS -->
+    <section id="shots">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">From the app</p>
+          <h2>Straight off the store listing</h2>
+        </div>
+        <div class="shots">
+          <img src="shot-4.png" loading="lazy" width="600" height="1300" alt="Highway Mode scanning the next 50 miles of I-5, with the Best Stop at exit 127" />
+          <img src="shot-3.png" loading="lazy" width="600" height="1300" alt="The savings receipt: your fill-up habits added up for the year" />
+          <img src="shot-5.png" loading="lazy" width="600" height="1300" alt="An aged-out scan prompting a rescan for current prices" />
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section id="faq">
       <div class="wrap">
@@ -153,6 +172,18 @@
             <p>GasMeUp is a paid app: $1.99 a month, or $17.99 a year with a 7-day free trial. No ads, no selling your data, no rewards program. Live scans cost us real money, about 4 cents each, and a small price is what keeps the answer honest.</p>
           </details>
         </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Pricing</p>
+          <h2>The honest part</h2>
+          <p>GasMeUp is a paid app. We promise no ads, no sponsored stations, and no data selling.</p>
+        </div>
+        <p class="price-line"><strong>$1.99 a month</strong>, or <strong>$17.99 a year</strong> with a 7-day free trial on the annual plan. Cancel anytime.</p>
       </div>
     </section>
 
