@@ -109,6 +109,18 @@ test('press page carries the factsheet essentials, contact, and asset zip', () =
   assert.deepEqual(ruleHits(notPress, 'press-kit'), []);
 });
 
+test('Apple links carry the campaign token (pt + per-section ct)', () => {
+  const untagged = auditHtml('index.html',
+    '<a href="https://apps.apple.com/us/app/gasmeup-find-cheap-gas/id6777846453">a</a>' +
+    '<a href="https://play.google.com/store/apps/details?id=com.vfisher.gasmeup&amp;referrer=utm_source%3Dgasmeup.app%26utm_medium%3Dreferral%26utm_campaign%3Dsite%26utm_content%3Dsite-hero">p</a>');
+  assert.equal(ruleHits(untagged, 'apple-link-untagged').length, 1);
+
+  const tagged = auditHtml('index.html',
+    '<a href="https://apps.apple.com/us/app/gasmeup-find-cheap-gas/id6777846453?pt=128985489&amp;ct=site-hero&amp;mt=8">a</a>' +
+    '<a href="https://play.google.com/store/apps/details?id=com.vfisher.gasmeup&amp;referrer=utm_source%3Dgasmeup.app%26utm_medium%3Dreferral%26utm_campaign%3Dsite%26utm_content%3Dsite-hero">p</a>');
+  assert.deepEqual(ruleHits(tagged, 'apple-link-untagged'), []);
+});
+
 test('every shipped page passes the audit', () => {
   const violations = auditSite(new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'));
   assert.deepEqual(violations, []);

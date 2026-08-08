@@ -51,6 +51,7 @@ export function auditHtml(file, html, { files } = {}) {
       violations.push({ file, rule: 'press-kit', detail: 'asset-zip link missing' });
     }
   }
+  auditAppleLinks(file, html, violations);
   auditPlayLinks(file, html, violations);
   if (file === 'index.html') {
     if (!/property="og:image"/.test(html)) {
@@ -81,6 +82,16 @@ export function auditHtml(file, html, { files } = {}) {
     }
   }
   return violations;
+}
+
+function auditAppleLinks(file, html, violations) {
+  const hrefs = [...html.matchAll(/href="([^"]*apps\.apple\.com\/[^"]*\/app\/[^"]*)"/g)].map((m) => m[1].replace(/&amp;/g, '&'));
+  for (const href of hrefs) {
+    const params = new URL(href).searchParams;
+    if (!params.get('pt') || !params.get('ct')) {
+      violations.push({ file, rule: 'apple-link-untagged', detail: href });
+    }
+  }
 }
 
 function auditPlayLinks(file, html, violations) {
