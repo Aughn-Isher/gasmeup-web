@@ -37,6 +37,20 @@ export function auditHtml(file, html, { files } = {}) {
       violations.push({ file, rule: 'dollar-headline', detail: heading.trim() });
     }
   }
+  if (file === 'press.html') {
+    if (!/\$1\.99[\s\S]*\$17\.99/.test(html)) {
+      violations.push({ file, rule: 'press-kit', detail: 'price facts missing' });
+    }
+    if (!/mailto:support@gasmeup\.app/.test(html)) {
+      violations.push({ file, rule: 'press-kit', detail: 'contact email missing' });
+    }
+    if (!/apps\.apple\.com/.test(html) || !/play\.google\.com/.test(html)) {
+      violations.push({ file, rule: 'press-kit', detail: 'store-links missing' });
+    }
+    if (!/href="gasmeup-press-kit\.zip"/.test(html)) {
+      violations.push({ file, rule: 'press-kit', detail: 'asset-zip link missing' });
+    }
+  }
   auditPlayLinks(file, html, violations);
   if (file === 'index.html') {
     if (!/property="og:image"/.test(html)) {

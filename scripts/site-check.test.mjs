@@ -92,6 +92,23 @@ test('index carries the crawler/share head set: og:image, smart banner, canonica
   assert.equal(ruleHits(badJson, 'required-meta').some((v) => v.detail.includes('json-ld')), true);
 });
 
+test('press page carries the factsheet essentials, contact, and asset zip', () => {
+  const bare = auditHtml('press.html', '<h1>Press</h1>');
+  for (const missing of ['price', 'contact', 'store-links', 'asset-zip']) {
+    assert.equal(ruleHits(bare, 'press-kit').some((v) => v.detail.includes(missing)), true, `should flag ${missing}`);
+  }
+
+  const full = auditHtml('press.html',
+    '<p>$1.99 and $17.99</p><a href="mailto:support@gasmeup.app">mail</a>' +
+    '<a href="https://apps.apple.com/us/app/gasmeup-find-cheap-gas/id6777846453">a</a>' +
+    '<a href="https://play.google.com/store/apps/details?id=com.vfisher.gasmeup&amp;referrer=utm_source%3Dgasmeup.app%26utm_medium%3Dreferral%26utm_campaign%3Dsite%26utm_content%3Dsite-press">p</a>' +
+    '<a href="gasmeup-press-kit.zip">Download all assets</a>');
+  assert.deepEqual(ruleHits(full, 'press-kit'), []);
+
+  const notPress = auditHtml('index.html', '<h1>Home</h1>');
+  assert.deepEqual(ruleHits(notPress, 'press-kit'), []);
+});
+
 test('every shipped page passes the audit', () => {
   const violations = auditSite(new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'));
   assert.deepEqual(violations, []);

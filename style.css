@@ -237,6 +237,21 @@ section h2 { font-size: clamp(26px, 4vw, 36px); letter-spacing: -0.025em; margin
 .legal ul { padding-left: 22px; }
 .legal a { word-break: break-word; }
 
+/* ---------- Press ---------- */
+.press h2 { margin-top: 40px; }
+.factsheet { display: grid; grid-template-columns: 130px 1fr; gap: 8px 18px; margin: 0; }
+.factsheet dt { font-weight: 700; color: var(--navy); font-size: 14.5px; }
+.factsheet dd { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
+.zip-btn {
+  display: inline-block; padding: 12px 22px; border-radius: 12px;
+  background: var(--navy); color: #fff !important; font-weight: 600;
+  text-decoration: none; box-shadow: var(--shadow-sm);
+}
+.zip-btn:hover { background: var(--navy-deep); }
+.asset-note { color: var(--ink-faint); font-size: 13.5px; }
+.press-shots { max-width: none; margin: 18px 0 0; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 760px) { .press-shots { grid-template-columns: repeat(3, 1fr); } }
+
 /* ---------- Footer ---------- */
 footer {
   background: var(--navy-deep);
