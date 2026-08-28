@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get GasMeUp</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon-48.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .get{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;text-align:center;padding:2rem 1rem}
+  .get img.logo{width:96px;height:96px}
+  .get .badges{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+  .get .badges img{height:52px}
+  .get p{max-width:34ch;margin:0}
+</style>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search);
+  var c=(q.get("c")||"get").toLowerCase().replace(/[^a-z0-9-]/g,"").slice(0,32)||"get";
+  var ios="https://apps.apple.com/us/app/gasmeup-find-cheap-gas/id6777846453?pt=128985489&ct=get-"+c+"&mt=8";
+  var play="https://play.google.com/store/apps/details?id=com.vfisher.gasmeup&referrer="+
+    encodeURIComponent("utm_source="+c+"&utm_medium=smartlink&utm_campaign=get");
+  var ua=navigator.userAgent||"";
+  var isIOS=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1);
+  var isAndroid=/Android/.test(ua);
+  window.__gasmeupLinks={ios:ios,play:play};
+  if(isIOS){location.replace(ios);}
+  else if(isAndroid){location.replace(play);}
+  document.addEventListener("DOMContentLoaded",function(){
+    document.getElementById("ios").href=ios;
+    document.getElementById("play").href=play;
+  });
+})();
+</script>
+</head>
+<body>
+<main class="get">
+  <img class="logo" src="logo-transparent.png" alt="GasMeUp">
+  <h1>Get GasMeUp</h1>
+  <p>Find the fill-up that's actually worth the drive. Pick your phone:</p>
+  <div class="badges">
+    <a id="ios" href="https://apps.apple.com/us/app/gasmeup-find-cheap-gas/id6777846453?pt=128985489&amp;ct=get&amp;mt=8"><img src="app-store-badge.svg" alt="Download on the App Store"></a>
+    <a id="play" href="https://play.google.com/store/apps/details?id=com.vfisher.gasmeup&amp;referrer=utm_source%3Dget%26utm_medium%3Dsmartlink%26utm_campaign%3Dget"><img src="google-play-badge.png" alt="Get it on Google Play"></a>
+  </div>
+  <p><a href="/">gasmeup.app</a></p>
+</main>
+</body>
+</html>
