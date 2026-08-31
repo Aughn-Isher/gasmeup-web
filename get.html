@@ -7,6 +7,13 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon-48.png">
 <link rel="stylesheet" href="style.css">
+<script type="module">
+import { analytics } from "https://esm.sh/@heycatch/sdk@0.7.0";
+analytics.init({
+  projectKey: "hck_pk_anuQddARxC2LqzfH-p6kei07z-N7m4DI",
+  install: { framework: "web", agent: "claude-code" },
+});
+</script>
 <style>
   .get{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;text-align:center;padding:2rem 1rem}
   .get img.logo{width:96px;height:96px}
