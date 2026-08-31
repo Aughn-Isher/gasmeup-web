@@ -30,10 +30,62 @@
       { "@type": "Offer", "price": "17.99", "priceCurrency": "USD", "description": "Annual subscription with a 7-day free trial" }
     ]
   }</script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GasMeUp",
+    "url": "https://gasmeup.app/",
+    "logo": "https://gasmeup.app/logo.png",
+    "founder": { "@type": "Person", "name": "Vaughn Fisher" },
+    "contactPoint": { "@type": "ContactPoint", "email": "support@gasmeup.app", "contactType": "customer support" }
+  }</script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is the \"best pick\" chosen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We count what the fill-up costs you in total, including the drive to get there. That's why a close station can beat a cheaper one across town. You always see the full list, and the crown is just our math." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an account?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. GasMeUp signs you in anonymously on first launch. There are no credentials and no email to type." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do the prices come from?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Live third-party price data, scanned at the moment you tap. Prices move fast, so always confirm at the pump. GasMeUp points you to the best-value stop; it can't promise the number on the sign." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's Highway Mode?",
+        "acceptedAnswer": { "@type": "Answer", "text": "On a long drive, GasMeUp scans the road ahead instead of just the area around you, and shows the best stop before you reach it. You pick the right exit instead of the first one." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is it paid?",
+        "acceptedAnswer": { "@type": "Answer", "text": "GasMeUp is a paid app: $1.99 a month, or $17.99 a year with a 7-day free trial. No ads, no selling your data, no rewards program. Live scans cost us real money, about 4 cents each, and a small price is what keeps the answer honest." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why not just use a free gas app?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Free apps are paid by ads and sponsored placements, which crowds the screen and puts another customer between you and the answer. GasMeUp's only customer is you: no ads, the detour counted in every price, one answer. See how it stacks up in GasMeUp vs GasBuddy." }
+      }
+    ]
+  }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script type="module">
+    import { analytics } from "https://esm.sh/@heycatch/sdk@0.7.0";
+    analytics.init({
+      projectKey: "hck_pk_anuQddARxC2LqzfH-p6kei07z-N7m4DI",
+      install: { framework: "web", agent: "claude-code" },
+    });
+  </script>
 </head>
 <body>
   <header class="site-head">
@@ -42,6 +94,7 @@
       <a href="#how">How it works</a>
       <a href="#features">Features</a>
       <a href="#faq">FAQ</a>
+      <a href="#pricing">Pricing</a>
     </nav>
   </header>
 
@@ -50,12 +103,13 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-copy">
-          <span class="pill"><span class="blip"></span> Now on iPhone &amp; Android</span>
+          <span class="pill"><span class="blip"></span> For commuters and road-trippers, on iPhone &amp; Android</span>
           <h1>The cheapest <span class="accent">worthwhile</span> fill-up, one tap away.</h1>
           <p class="lede">GasMeUp answers one question: where's the cheapest fill-up that's worth the drive? One tap scans the stations around you, prices in the detour, and hands you the answer instead of a map of pins.</p>
           <div class="cta-row">
             <a class="store-badge" href="https://apps.apple.com/us/app/gasmeup-find-cheap-gas/id6777846453?pt=128985489&amp;ct=site-hero&amp;mt=8"><img src="app-store-badge.svg" alt="Download on the App Store" /></a>
             <a class="store-badge play" href="https://play.google.com/store/apps/details?id=com.vfisher.gasmeup&amp;referrer=utm_source%3Dgasmeup.app%26utm_medium%3Dreferral%26utm_campaign%3Dsite%26utm_content%3Dsite-hero"><img src="google-play-badge.png" alt="Get it on Google Play" /></a>
+            <a class="badge ghost" href="#how">See how it works</a>
           </div>
           <p class="cta-note">Ditch the hunt. Skip the math.</p>
         </div>
@@ -94,6 +148,37 @@
       </div>
     </section>
 
+    <!-- THE DIFFERENCE (audit D1.5): show the pin-map vs one-answer contrast -->
+    <section id="difference">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The difference</p>
+          <h2>One answer, not a map of pins.</h2>
+          <p>Here's what that looks like side by side.</p>
+        </div>
+        <div class="ba-grid">
+          <div class="ba-panel">
+            <p class="ba-label">The old way: a map of pins</p>
+            <div class="pinmap" role="img" aria-label="A generic gas app map crowded with price pins and no recommendation">
+              <span class="pin" style="top:12%;left:30%">$4.45</span>
+              <span class="pin" style="top:22%;left:68%">$4.79</span>
+              <span class="pin" style="top:33%;left:18%">$4.39</span>
+              <span class="pin" style="top:41%;left:55%">$4.52</span>
+              <span class="pin" style="top:52%;left:80%">$4.29</span>
+              <span class="pin" style="top:60%;left:34%">$4.66</span>
+              <span class="pin" style="top:72%;left:62%">$4.35</span>
+              <span class="pin" style="top:83%;left:22%">$4.85</span>
+              <span class="pin" style="top:90%;left:70%">$4.49</span>
+            </div>
+          </div>
+          <div class="ba-panel">
+            <p class="ba-label">GasMeUp: the answer</p>
+            <img src="shot-2.png" loading="lazy" width="600" height="1300" alt="GasMeUp home screen: one Best Pick wearing the crown, chosen after the drive there is counted" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FEATURES -->
     <section id="features" class="band">
       <div class="wrap">
@@ -127,6 +212,26 @@
         </div>
       </div>
     </section>
+
+    <!-- EARLY-USER PROOF (audit D3.1/D3.2/D3.5): CONTENT OWED FROM VAUGHN.
+         Do NOT invent quotes or numbers. When real App Store / Google Play review
+         quotes exist (2-3, first name + context like "commuter"), plus the current
+         star rating and review count, uncomment and fill in:
+    <section id="proof" class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Early drivers</p>
+          <h2>What people say</h2>
+          <p>RATING LINE HERE, e.g. "4.8 on the App Store across NN reviews."</p>
+        </div>
+        <div class="grid3">
+          <div class="card"><p>"QUOTE"</p><p class="ba-label">FirstName, context</p></div>
+          <div class="card"><p>"QUOTE"</p><p class="ba-label">FirstName, context</p></div>
+          <div class="card"><p>"QUOTE"</p><p class="ba-label">FirstName, context</p></div>
+        </div>
+      </div>
+    </section>
+    -->
 
     <!-- SCREENSHOTS -->
     <section id="shots">
@@ -171,6 +276,10 @@
             <summary>Why is it paid?</summary>
             <p>GasMeUp is a paid app: $1.99 a month, or $17.99 a year with a 7-day free trial. No ads, no selling your data, no rewards program. Live scans cost us real money, about 4 cents each, and a small price is what keeps the answer honest.</p>
           </details>
+          <details>
+            <summary>Why not just use a free gas app?</summary>
+            <p>Free apps are paid by ads and sponsored placements, which crowds the screen and puts another customer between you and the answer. GasMeUp's only customer is you: no ads, the detour counted in every price, one answer. See how it stacks up in <a href="/vs-gasbuddy">GasMeUp vs GasBuddy</a>.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -183,7 +292,41 @@
           <h2>The honest part</h2>
           <p>GasMeUp is a paid app. We promise no ads, no sponsored stations, and no data selling.</p>
         </div>
-        <p class="price-line"><strong>$1.99 a month</strong>, or <strong>$17.99 a year</strong> with a 7-day free trial on the annual plan. Cancel anytime.</p>
+        <div class="plans">
+          <div class="plan">
+            <h3>Monthly</h3>
+            <p class="plan-price"><strong>$1.99</strong> <span class="per">a month</span></p>
+            <p class="plan-note">Billed monthly, no trial. For trying it out. Cancel anytime.</p>
+          </div>
+          <div class="plan featured">
+            <p class="plan-badge">Most popular · Save 25%</p>
+            <h3>Annual</h3>
+            <p class="plan-price"><strong>$17.99</strong> <span class="per">a year</span></p>
+            <p class="plan-note">About $1.50 a month. Starts with a 7-day free trial; after the 7 days the plan begins unless you cancel.</p>
+          </div>
+        </div>
+        <p class="price-notes">Billing runs through the App Store or Google Play, so your card never touches us. Cancel anytime in your phone's subscription settings. No email, no account, no selling your data.</p>
+        <p class="price-anchor">Based on real GasMeUp scans and federal driving data, the average driver could save nearly $300 a year, more if you drive more or fill up in places where prices swing hard.</p>
+        <p class="price-why"><a href="#faq">Why is it paid at all?</a></p>
+      </div>
+    </section>
+
+    <!-- FOUNDER (audit D3.3 / D6): the person behind the paid app -->
+    <section id="about" class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Who's behind this</p>
+          <h2>Made by one driver in San José.</h2>
+        </div>
+        <div class="founder-card">
+          <!-- FOUNDER PHOTO OWED: the press kit keeps the headshot on-request by
+               design, so the homepage ships without one until Vaughn decides.
+               When he does: add founder.jpg to the repo and uncomment.
+          <img class="founder-photo" src="/founder.jpg" alt="Vaughn Fisher" width="96" height="96" />
+          -->
+          <p>I'm Vaughn Fisher, a learning designer in San José, California, and the person who built GasMeUp. It started as a personal script for deciding where to fill up. After about a year of using it I'd saved around $300 on gas, and friends kept asking for a version they could use. This is that version: the same math, live prices, and a straight answer.</p>
+          <p>I built it nights and weekends with no funding and no team, and I answer the support inbox myself. More background is in the <a href="press.html">press kit</a>.</p>
+        </div>
       </div>
     </section>
 
@@ -197,6 +340,7 @@
             <a class="store-badge" href="https://apps.apple.com/us/app/gasmeup-find-cheap-gas/id6777846453?pt=128985489&amp;ct=site-footer&amp;mt=8"><img src="app-store-badge.svg" alt="Download on the App Store" /></a>
             <a class="store-badge play" href="https://play.google.com/store/apps/details?id=com.vfisher.gasmeup&amp;referrer=utm_source%3Dgasmeup.app%26utm_medium%3Dreferral%26utm_campaign%3Dsite%26utm_content%3Dsite-footer"><img src="google-play-badge.png" alt="Get it on Google Play" /></a>
           </div>
+          <p class="cta-note">7-day free trial on the annual plan. Billing runs through the App Store or Google Play. Cancel anytime.</p>
         </div>
       </div>
     </section>
@@ -218,6 +362,9 @@
     <div class="wrap">
       <a class="brand" href="/"><img src="logo.png" alt="" width="28" height="28" /><span class="wm">GasMe<span class="up">Up</span></span></a>
       <div class="flinks">
+        <a href="/about">About</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/vs-gasbuddy">GasMeUp vs GasBuddy</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
         <a href="press.html">Press</a>

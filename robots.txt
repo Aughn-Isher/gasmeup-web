@@ -1,0 +1,17 @@
+# gasmeup.app — everyone is welcome to crawl, AI assistants included.
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://gasmeup.app/sitemap.xml

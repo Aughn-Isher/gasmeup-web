@@ -252,6 +252,117 @@ section h2 { font-size: clamp(26px, 4vw, 36px); letter-spacing: -0.025em; margin
 .press-shots { max-width: none; margin: 18px 0 0; grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 760px) { .press-shots { grid-template-columns: repeat(3, 1fr); } }
 
+/* ---------- Before/after: the pin map vs the answer ---------- */
+.ba-grid { display: grid; gap: 28px; grid-template-columns: 1fr; max-width: 720px; margin: 0 auto; }
+@media (min-width: 700px) { .ba-grid { grid-template-columns: 1fr 1fr; } }
+.ba-panel { text-align: center; }
+.ba-label { font-weight: 600; color: var(--ink-soft); font-size: 14px; margin: 0 0 14px; }
+.ba-panel > img { width: 100%; max-width: 300px; margin: 0 auto; border-radius: 18px; box-shadow: var(--shadow-sm); }
+.pinmap {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  aspect-ratio: 600 / 1300;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(105deg, transparent 47%, #dde4ee 47%, #dde4ee 53%, transparent 53%),
+    linear-gradient(15deg, transparent 47%, #dde4ee 47%, #dde4ee 53%, transparent 53%),
+    linear-gradient(160deg, transparent 48%, #e6ebf3 48%, #e6ebf3 52%, transparent 52%),
+    var(--bg-soft);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.pinmap .pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 3px 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+.pinmap .pin::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #fff;
+  border-bottom: 0;
+}
+
+/* ---------- Pricing tier cards ---------- */
+.plans { display: grid; gap: 20px; grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; }
+@media (min-width: 640px) { .plans { grid-template-columns: 1fr 1fr; align-items: stretch; } }
+.plan {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.plan.featured { border: 2px solid var(--green); box-shadow: var(--shadow); }
+.plan-badge {
+  display: inline-block;
+  background: var(--green-tint);
+  color: var(--green-dark);
+  font-size: 12.5px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin: 0 0 10px;
+}
+.plan h3 { margin: 0 0 6px; color: var(--navy); font-size: 18px; letter-spacing: -0.01em; }
+.plan-price { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 10px; color: var(--ink); }
+.plan-price strong { color: var(--green-dark); }
+.plan-price .per { font-size: 15px; font-weight: 500; color: var(--ink-soft); letter-spacing: 0; }
+.plan-note { color: var(--ink-soft); font-size: 14px; margin: 0; }
+.price-notes { text-align: center; color: var(--ink-soft); font-size: 14.5px; max-width: 560px; margin: 24px auto 0; }
+.price-anchor { text-align: center; color: var(--ink); font-size: 15.5px; max-width: 600px; margin: 14px auto 0; }
+.price-why { text-align: center; font-size: 14px; margin: 10px 0 0; }
+
+/* ---------- Founder ---------- */
+.founder-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+.founder-card p { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 14px; }
+.founder-card p:last-child { margin-bottom: 0; }
+.founder-photo { border-radius: 999px; margin: 0 0 16px; }
+
+/* ---------- Comparison page ---------- */
+.vs-wrap { overflow-x: auto; max-width: 760px; margin: 0 auto; }
+.vs-table { width: 100%; border-collapse: collapse; min-width: 540px; }
+.vs-table th, .vs-table td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  vertical-align: top;
+  color: var(--ink-soft);
+}
+.vs-table thead th { color: var(--navy); font-size: 14px; letter-spacing: 0.02em; }
+.vs-table td:first-child, .vs-table th:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+.vs-table td.gm { color: var(--ink); }
+.vs-prose { max-width: 640px; margin: 0 auto; }
+.vs-prose h2 { font-size: 22px; margin: 40px 0 10px; }
+.vs-prose p { color: var(--ink-soft); }
+
+/* ---------- Final-CTA fine print ---------- */
+.cta-final .cta-note { color: #c2cde6; margin-top: 18px; }
+
 /* ---------- Footer ---------- */
 footer {
   background: var(--navy-deep);

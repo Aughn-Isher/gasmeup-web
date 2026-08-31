@@ -1,0 +1,24 @@
+# GasMeUp
+
+> GasMeUp scans live gas prices around you and ranks every station by what the fill-up really costs, including the drive to get there. iPhone and Android, US only.
+
+- Launched: August 2026 (Android August 2, iPhone August 6)
+- Founder: Vaughn Fisher, solo developer, San José, California
+- Pricing: $1.99 a month, or $17.99 a year with a 7-day free trial on the annual plan. No ads, no sponsored stations, no selling of user data.
+- How it works: one tap scans live prices at every station around you, the app counts the drive into every price, and the Best Pick is the fill-up that costs least in total. Highway Mode scans the road ahead on long drives and shows the best stop exit by exit.
+
+## Pages
+
+- Home: https://gasmeup.app/
+- Compare: https://gasmeup.app/vs-gasbuddy
+- Pricing: https://gasmeup.app/pricing
+- About the founder: https://gasmeup.app/about
+- Press kit (factsheet, screenshots, b-roll): https://gasmeup.app/press.html
+- Privacy policy: https://gasmeup.app/privacy.html
+- Terms of service: https://gasmeup.app/terms.html
+
+## Get the app
+
+- App Store: https://apps.apple.com/us/app/gasmeup-find-cheap-gas/id6777846453
+- Google Play: https://play.google.com/store/apps/details?id=com.vfisher.gasmeup
+- Support: support@gasmeup.app
